@@ -21,6 +21,7 @@ public class BoundaryRenderer : MonoBehaviour
     public float widthB;
     public float heightB;
 
+    //line renderer component
     [SerializeField] LineRenderer lineR;
 
     private void DrawBoundary(int steps, float radius, bool circle, bool box) 
@@ -75,15 +76,6 @@ public class BoundaryRenderer : MonoBehaviour
             lineR.SetPosition(4, new Vector2((-widthB / 2), (-heightB / 2)));
         }
     }
-    private void DrawCircle()
-    {
-    }
-
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         DrawBoundary(steps, radius, circle, box);
