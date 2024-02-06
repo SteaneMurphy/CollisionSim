@@ -6,14 +6,14 @@ using UnityEditor;
 public class Settings : MonoBehaviour
 {
     [Header("Boundary: Circle")]
-    [SerializeField] bool circle;
-    [SerializeField] float radius;
+    [SerializeField] public bool circle;
+    [SerializeField] public float diameter;
     [SerializeField] int steps;
     [SerializeField][Range(0, 1)] float circleThickness;
     [SerializeField] Color circleColor;
 
     [Header("Boundary: Box")]
-    [SerializeField] bool box;
+    [SerializeField] public bool box;
     [SerializeField][Range(0, 1)] float boxThickness;
     [SerializeField] public float boxHeight;
     [SerializeField] public float boxWidth;
@@ -29,6 +29,8 @@ public class Settings : MonoBehaviour
     [SerializeField] public float velocity;
     [SerializeField] public bool setColor;
     [SerializeField] public Color particleColor;
+    [SerializeField] public bool gravity;
+    [SerializeField] public float gravityAmount;
 
     [Header("Other Scripts")]
     [SerializeField] BoundaryRenderer boundaryRendScript;
@@ -44,7 +46,7 @@ public class Settings : MonoBehaviour
         //circle settings
         boundaryRendScript.circle = circle;
         boundaryRendScript.steps = steps;
-        boundaryRendScript.radius = radius;
+        boundaryRendScript.diameter = diameter;
         boundaryRendScript.colorC = circleColor;
         boundaryRendScript.thicknessC = circleThickness;
 

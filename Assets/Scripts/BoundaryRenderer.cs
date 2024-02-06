@@ -11,7 +11,7 @@ public class BoundaryRenderer : MonoBehaviour
 
     //circle variables
     public int steps;
-    public float radius;
+    public float diameter;
     public float thicknessC;
     public Color colorC;
 
@@ -78,6 +78,6 @@ public class BoundaryRenderer : MonoBehaviour
     }
     void Update()
     {
-        DrawBoundary(steps, radius, circle, box);
+        DrawBoundary(steps, diameter, circle, box);
     }
 }

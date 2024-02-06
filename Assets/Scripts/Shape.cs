@@ -6,7 +6,7 @@ using UnityEngine;
 public class Shape : MonoBehaviour
 {
     //circle variables
-    private int currentCircleAmount;
+    public int currentCircleAmount;
     public int desiredCircleAmount;
     public bool randomiseCircleSpawn;
     [SerializeField] GameObject circlePrefab;
@@ -25,6 +25,7 @@ public class Shape : MonoBehaviour
                     GameObject newObj = Instantiate(circlePrefab, new Vector3(Random.Range(-50f, 50f), Random.Range(-50f, 50f), 0f), Quaternion.identity);
                     newObj.transform.SetParent(transform, false);
                     circleObjects.Add(newObj);
+                    newObj.GetComponent<Circle>().positionInList = circleObjects.IndexOf(newObj);
                     currentCircleAmount++;
                 }
                 else
